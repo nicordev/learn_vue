@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="nav-bar"></div>
+    
+    <div id="app">
+        <div class="product">
+            <div class="product-image">
+                <img v-bind:src="image" alt="">
+            </div>
+
+            <div class="product-info">
+                <h1>{{ product }}</h1>
+
+                <p v-show="inStock">Available!</p>
+
+                <p v-if="inStock">In Stock</p>
+                <p v-else>Out of Stock</p>
+
+                <p v-if="inventory > 10">Lot of products!</p>
+                <p v-else-if="inventory <= 10 && inventory > 0">Almost out of stock...</p>
+                <p v-else>Empty.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
