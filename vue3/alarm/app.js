@@ -51,7 +51,7 @@ app.component('alarm-component', {
     computed: {
         timeRemaining() {
             if (typeof this.millisecondsRemaining === 'undefined') {
-                return;
+                this.updateTimeRemaining();
             }
 
             const time = convertMilliseconds(this.millisecondsRemaining);
